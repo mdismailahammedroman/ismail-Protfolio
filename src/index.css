@@ -1,4 +1,14 @@
 @import "tailwindcss";
+
+
+html, body, #root {
+  font-family: "Roboto Condensed", ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-optical-sizing: auto;
+}
+
+
 @keyframes slide-out-right {
   to { transform: translateX(100vw); opacity: 0; }
 }

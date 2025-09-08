@@ -6,7 +6,7 @@ export const Home = () => {
 
  
   return (
-    <div className="min-h-screen flex bg-amber-300">
+    <div className="min-h-screen fle w-full">
 
 
       <main className="flex-1 ml-0 md:ml-64 p-6">

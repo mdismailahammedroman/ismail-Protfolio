@@ -1,11 +1,5 @@
 import React from "react";
 import ismail from "../assets/ismail2.jpg";
-import {
-  FaFacebookSquare,
-  FaTwitterSquare,
-  FaLinkedin,
-  FaGithub,
-} from "react-icons/fa";
 import { Link } from "react-router";
 import SocialLinks from "./SocialLinks";
 
@@ -34,7 +28,7 @@ export const Navbar = ({ open = false }) => {
         <ul class="space-y-2 text-center">
           <Link
             to=""
-            class="nav-link block border-b border-t-2 border-gray-200 py-2 border-l-6 border-r-4 hover:border-r-yellow-400 hover:border-l-yellow-400 transition active"
+            class="font nav-link block border-b border-t-2 border-gray-200 py-2 border-l-6 border-r-4 hover:border-r-yellow-400 hover:border-l-yellow-400 transition active"
           >
             Home
           </Link>
