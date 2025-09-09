@@ -1,247 +1,289 @@
 /* eslint-disable no-unused-vars */
-import { motion } from "framer-motion";
-import React from "react";
+import { motion, useInView } from "framer-motion";
+import React, { useRef } from "react";
+import { LanguageBar } from "../component/LanguageBar";
+
+const languages = [
+  { name: "JavaScript", level: 80 },
+  { name: "Typescript", level: 75 },
+  { name: "HTML & CSS", level: 98 },
+  { name: "SASS / SCSS", level: 85 },
+];
+const Frameworks=[
+  { name: "Express.js:", level: 70 },
+  { name: "NextJs:", level: 40 },
+  { name: "Tailwind CSS:", level: 90 },
+]
+const Database=[
+  { name: "MongoDB", level: 75 },
+  { name: "postgresql", level: 70 },
+]
+const Libraries =[
+  { name: "React", level: 80 },
+  { name: "React Router", level: 90 },
+  { name: "Redux, React Hook", level: 75 },
+  { name: " Framer Motion", level: 75 },
+  { name: " RESTful API;", level: 80 },
+]
+const Storage=[
+  { name: "FireBase, Vercel", level: 90 },
+]
+const Tools=[
+  { name: "GitHub, Git, Vscode", level: 90 },
+]
+
+const TimelineItem = ({
+  direction = "left",
+  year,
+  title,
+  subtitle,
+  location,
+}) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: false });
+
+  const isLeft = direction === "left";
+  const animation = {
+    initial: { opacity: 0, x: isLeft ? -50 : 50 },
+    animate: isInView
+      ? { opacity: 1, x: 0 }
+      : { opacity: 0, x: isLeft ? -50 : 50 },
+    transition: { duration: 0.5 },
+  };
+
+  const containerClasses = `mb-8 flex justify-between items-center w-full ${
+    isLeft ? "flex-row-reverse left-timeline" : "right-timeline"
+  }`;
+
+  return (
+    <motion.div ref={ref} {...animation} className={containerClasses}>
+      <div className="order-1 w-5/12"></div>
+      <div
+        className={`order-1 w-5/12 px-1 py-4 ${
+          isLeft ? "text-right" : "text-left"
+        }`}
+      >
+        <div
+          className={`h-10 w-22 p-1 ${isLeft ? "ml-auto" : ""}`}
+          style={{
+            clipPath: isLeft
+              ? "polygon(0% 0%, 100% 0%, 100% 55%, 100% 75%, 86% 100%, 86% 75%, 0% 75%)"
+              : "polygon(0% 0%, 100% 0%, 100% 75%, 12% 75%, 12% 100%, 0 75%, 0% 75%)",
+            backgroundColor: "#9bd952",
+          }}
+        >
+          <p className="text-center text-base text-gray-800 underline decoration-amber-400">
+            {year}
+          </p>
+        </div>
+        <h4 className="mb-3 font-bold text-lg md:text-2xl">{title}</h4>
+        <p className="text-sm md:text-base leading-snug text-gray-600">
+          {subtitle}
+        </p>
+        <p className="text-sm md:text-base leading-snug text-gray-600">
+          {location}
+        </p>
+      </div>
+    </motion.div>
+  );
+};
 
 export const Resume = () => {
   return (
     <div className="md:ml-64 flex-1 font-roboto">
-      <section
-        id="about"
-        className="min-h-screen px-4 sm:px-6 md:px-10 py-8 sm:py-12 bg-white text-gray-800"
-      >
-        {/* About Me Header */}
+      <section className="min-h-screen px-4 md:px-10 py-8 bg-white text-gray-800">
         <motion.div
-          className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 mb-8 sm:mb-10"
+          className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-10"
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
+          transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
           <div
-            className="text-white font-bold text-xl sm:text-2xl px-4 sm:px-6 py-3 sm:py-6 inline-block -ml-14"
+            className="text-white font-bold text-2xl px-6 h-18 p-3 inline-block lg:-ml-14"
             style={{
               clipPath:
-                "polygon(0 0, 100% 0%, 100% 73%, 12% 73%, 12% 100%, 0 73%, 0 14%)",
+                "polygon(0 0, 100% 0%, 100% 73%, 13% 73%, 13% 100%, 0 73%, 0 14%)",
               backgroundColor: "#facc15",
             }}
           >
-            <p className="-mt-1 sm:-mt-3 ">Resume</p>
+            <p>Resume</p>
           </div>
-          <p
-            className="text-gray-400 text-sm sm:text-base font italic font-bold
-"
-          >
+          <p className="text-gray-400 text-base italic font-bold">
             4+ Years of Experience
           </p>
         </motion.div>
-        <div className="container mx-auto flex flex-col items-start md:flex-row my-3 md:my-24">
-          <div className="flex flex-col w-full sticky md:top-36 lg:w-1/3 mt-2 md:mt-12 px-8">
+
+        <div className="container mx-auto flex flex-col items-start lg:flex-row my-3 ">
+          {" "}
+          <div className="flex flex-col w-full lg:sticky md:top-36 lg:w-1/3 mt-2 md:mt-12 px-8">
+            {" "}
             <p className="text-xl md:text-2xl leading-normal md:leading-relaxed mb-2 text-gray-800 uppercase tracking-loose underline decoration-amber-400">
-              Education
-            </p>
-           
+              {" "}
+              Education{" "}
+            </p>{" "}
             <p className="text-sm md:text-base text-gray-600 mb-4 ">
-            My academic path reflects continuous learning and adapting to new challenges.
-            </p>
-           
+              {" "}
+              My academic path reflects continuous learning and adapting to new
+              challenges.{" "}
+            </p>{" "}
           </div>
-          <div className="ml-0 md:ml-12 lg:w-2/3 sticky">
-            <div className="container mx-auto w-full h-full">
-              <div className="relative wrap overflow-hidden p-10 h-full">
-                <div
-                  className="border-2 absolute h-full"
-                  style={{
-                    right: "50%",
-                    border: "2px solid #FFC100",
-                    borderRadius: "1%",
-                  }}
-                ></div>
+          <div className="lg:w-2/3">
+            <div className="relative p-10">
+              <div
+                className="absolute h-full border-2"
+                style={{
+                  right: "50%",
+                  borderColor: "#FFC100",
+                  borderRadius: "1%",
+                }}
+              />
+              <div
+                className="absolute h-full border-2"
+                style={{
+                  left: "50%",
+                  borderColor: "#FFC100",
+                  borderRadius: "1%",
+                }}
+              />
 
-                <div
-                  className="border-2 absolute h-full"
-                  style={{
-                    left: "50%",
-                    border: "2px solid #FFC100",
-                    borderRadius: "1%",
-                  }}
-                ></div>
+              <TimelineItem
+                direction="left"
+                year="2020-2024"
+                title="BS in Computer Science & Engineering"
+                subtitle="Northern University Bangladesh"
+                location="Dhaka, Bangladesh"
+              />
 
-                <div className="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline">
-                  <div className="order-1 w-5/12"></div>
-                  <div className="order-1 w-5/12 px-1 py-4 text-right">
-                    <p className="mb-3 text-base text-gray-500">
-                      2020-2024
-                    </p>
-                    <h4 className="mb-3 font-bold text-lg md:text-2xl">
-                    BS in Computer Science & Engineering
-                    </h4>
-                    <p className="text-sm md:text-base leading-snug text-gray-600 text-opacity-100">
-                    Northern University Bangladesh
-                    </p>
-                    <p className="text-sm md:text-base leading-snug text-gray-600 text-opacity-100">
-                    Dhaka, Bangladesh</p>
-                  </div>
-                </div>
-                <div className="mb-8 flex justify-between items-center w-full right-timeline">
-                  <div className="order-1 w-5/12"></div>
-                  <div className="order-1  w-5/12 px-1 py-4 text-left">
-                    <p className="mb-3 text-base text-gray-500">
-                     2013-2017
-                    </p>
-                    <h4 className="mb-3 font-bold text-lg md:text-2xl">
-                      Diploma in Engineering <strong className="text-gray-500">Computer Science</strong>
-                    </h4>
-                    <p className="text-sm md:text-base leading-snug text-gray-600 text-opacity-100">
-                    Muslim Aid Institute of Science of Technology
-                    <p className="text-sm md:text-base leading-snug text-gray-600 text-opacity-100">
-                    Rangpur, Bangladesh</p>
-                    
-                    </p>
+              <TimelineItem
+                direction="right"
+                year="2013-2017"
+                title="Diploma in Engineering (Computer Science)"
+                subtitle="Muslim Aid Institute of Science & Technology"
+                location="Rangpur, Bangladesh"
+              />
 
+              <TimelineItem
+                direction="left"
+                year="2010-2012"
+                title="Secondary School Certificate (SSC)"
+                subtitle="Taluk Jamila B/L High School"
+                location="Gaibandha, Bangladesh"
+              />
 
-                  </div>
-                </div>
-                <div className="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline">
-                  <div className="order-1 w-5/12"></div>
-                  <div className="order-1 w-5/12 px-1 py-4 text-right">
-                    <p className="mb-3 text-base text-gray-500">
-                      {" "}
-                     2010-2012
-                    </p>
-                    <h4 className="mb-3 font-bold text-lg md:text-2xl">
-                    Secondary School certificate (SSC)
-                    </h4>
-                    <p className="text-sm md:text-base leading-snug text-gray-600 text-opacity-100">
-                    Taluk Jamila B/L High School
-                    <p className="text-sm md:text-base leading-snug text-gray-600 text-opacity-100">
-                    Gaibandha, Bangladesh</p> 
-                    </p>
-                  </div>
-                </div>
-
-                <div className="mb-8 flex justify-between items-center w-full right-timeline">
-                  <div className="order-1 w-5/12"></div>
-
-                  <div className="order-1  w-5/12 px-1 py-4">
-                   <p className="mb-3 text-base text-gray-500">
-                      {" "}
-                     2025
-                    </p>
-                    <h4 className="mb-3 font-bold text-lg md:text-2xl">
-                    Next Level Web Development
-                    </h4>
-                    <p className="text-sm md:text-base leading-snug text-gray-600 text-opacity-100">
-                    Programming Hero
-                    <p className="text-sm md:text-base leading-snug text-gray-600 text-opacity-100">
-                    Dhaka, Bangladesh</p> 
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <img
-                className="mx-auto -mt-36 md:-mt-36"
-                src="https://user-images.githubusercontent.com/54521023/116968861-ef21a000-acd2-11eb-95ac-a34b5b490265.png"
+              <TimelineItem
+                direction="right"
+                year="2025 - 2025"
+                title="Next Level Web Development"
+                subtitle="Programming Hero"
+                location="Dhaka, Bangladesh"
               />
             </div>
+
+            <img
+              className="mx-auto -mt-36"
+              src="https://user-images.githubusercontent.com/54521023/116968861-ef21a000-acd2-11eb-95ac-a34b5b490265.png"
+              alt="Timeline graphic"
+            />
           </div>
         </div>
 
-        {/* Skills */}
-        <div className="container mx-auto flex flex-col items-start md:flex-row my-12 md:my-24">
-          <div className="flex flex-col w-full sticky md:top-36 lg:w-1/3 mt-2 md:mt-12 px-8">
-          <p className="text-xl md:text-2xl leading-normal md:leading-relaxed mb-2 text-gray-800 uppercase tracking-loose underline decoration-amber-400">
+        {/* Skills
+         */}
+
+        <div className="container mx-auto flex flex-col items-start lg:flex-row my-3 ">
+          {" "}
+          <div className="flex flex-col w-full lg:sticky md:top-36 lg:w-1/3  md:mt-12 px-8">
+            {" "}
+            <p className="text-xl md:text-2xl leading-normal md:leading-relaxed mb-2
+             text-gray-800 uppercase tracking-loose underline decoration-amber-400">
+              {" "}
               Skills
             </p>
-        
-            <p className="text-sm md:text-base text-gray-600 mb-4">
-            Skilled in building complete web applications from frontend to backend.
+            <p className="text-base text-gray-600 mb-4">
+              Skilled in building complete Web Applications from Frontend to
+              Backend.
             </p>
-          
           </div>
-          <div className="ml-0 md:ml-12 lg:w-2/3 sticky">
-            <div className="container mx-auto w-full h-full">
-              <div className="relative wrap overflow-hidden p-10 h-full">
-                <div
-                  className="border-2 absolute h-full"
-                  style={{
-                    right: "50%",
-                    border: "2px solid #FFC100",
-                    borderRadius: "1%",
-                  }}
-                ></div>
-
-                <div
-                  className="border-2 absolute h-full"
-                  style={{
-                    left: "50%",
-                    border: "2px solid #FFC100",
-                    borderRadius: "1%",
-                  }}
-                ></div>
-
-                <div className="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline">
-                  <div className="order-1 w-5/12"></div>
-                  <div className="order-1 w-5/12 px-1 py-4 text-right">
-                    <h4 className="mb-3 font-bold text-lg md:text-2xl">
-                      Registration
-                    </h4>
-                 
-                  </div>
-                </div>
-                <div className="mb-8 flex justify-between items-center w-full right-timeline">
-                  <div className="order-1 w-5/12"></div>
-                  <div className="order-1  w-5/12 px-1 py-4 text-left">
-                    <p className="mb-3 text-base text-gray-500">
-                      6-9 May, 2021
-                    </p>
-                    <h4 className="mb-3 font-bold text-lg md:text-2xl">
-                      Participation
-                    </h4>
-                    <p className="text-sm md:text-base leading-snug text-gray-600 text-opacity-100">
-                      Participate online. The links for your registered events
-                      will be sent to you via email and whatsapp groups. Use
-                      those links and show your talent.
-                    </p>
-                  </div>
-                </div>
-                <div className="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline">
-                  <div className="order-1 w-5/12"></div>
-                  <div className="order-1 w-5/12 px-1 py-4 text-right">
-                    <p className="mb-3 text-base text-gray-500">
-                      {" "}
-                      10 May, 2021
-                    </p>
-                    <h4 className="mb-3 font-bold text-lg md:text-2xl">
-                      Result Declaration
-                    </h4>
-                    <p className="text-sm md:text-base leading-snug text-gray-600 text-opacity-100">
-                      The ultimate genius will be revealed by our judging panel
-                      on 10th May, 2021 and the resukts will be announced on the
-                      whatsapp groups and will be mailed to you.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="mb-8 flex justify-between items-center w-full right-timeline">
-                  <div className="order-1 w-5/12"></div>
-
-                  <div className="order-1  w-5/12 px-1 py-4">
-                    <p className="mb-3 text-base text-gray-500">12 May, 2021</p>
-                    <h4 className="mb-3 font-bold  text-lg md:text-2xl text-left">
-                      Prize Distribution
-                    </h4>
-                    <p className="text-sm md:text-base leading-snug text-gray-600 text-opacity-100">
-                      The winners will be contacted by our team for their
-                      addresses and the winning goodies will be sent at their
-                      addresses.
-                    </p>
-                  </div>
-                </div>
+          <div className="lg:w-2/3 w-full">
+            <div className="relative p-5">
+            <div className="px-4 md:px-10">
+                <h2 className="text-xl font-bold text-gray-600 mb-6 underline
+                 decoration-amber-400">
+               Languages
+                </h2>
+                {languages.map((lang) => (
+                  <LanguageBar
+                    key={lang.name}
+                    name={lang.name}
+                    level={lang.level}
+                  />
+                ))}
               </div>
-              <img
-                className="mx-auto -mt-36 md:-mt-36"
-                src="https://user-images.githubusercontent.com/54521023/116968861-ef21a000-acd2-11eb-95ac-a34b5b490265.png"
-              />
+              <div className="px-4 md:px-10">
+                <h2 className="text-xl font-bold text-gray-600 mb-6 underline decoration-amber-400">
+                Frameworks
+                </h2>
+                {Frameworks.map((Frame) => (
+                  <LanguageBar
+                    key={Frame.name}
+                    name={Frame.name}
+                    level={Frame.level}
+                  />
+                ))}
+              </div>
+              <div className="px-4 md:px-10">
+                <h2 className="text-xl font-bold text-gray-600 mb-6 underline decoration-amber-400">
+                Database
+                </h2>
+                {Database.map((data) => (
+                  <LanguageBar
+                    key={data.name}
+                    name={data.name}
+                    level={data.level}
+                  />
+                ))}
+              </div>
+              <div className="px-4 md:px-10">
+                <h2 className="text-xl font-bold text-gray-600 mb-6 underline decoration-amber-400">
+                Libraries & APIs
+
+
+                </h2>
+                {Libraries.map((librari) => (
+                  <LanguageBar
+                    key={librari.name}
+                    name={librari.name}
+                    level={librari.level}
+                  />
+                ))}
+              </div>
+              <div className="px-4 md:px-10">
+                <h2 className="text-xl font-bold text-gray-600 mb-6 underline decoration-amber-400">
+               Storage
+
+
+                </h2>
+                {Storage.map((lang) => (
+                  <LanguageBar
+                    key={lang.name}
+                    name={lang.name}
+                    level={lang.level}
+                  />
+                ))}
+              </div>
+              <div className="px-4 md:px-10">
+                <h2 className="text-xl font-bold text-gray-600 mb-6 underline decoration-amber-400">
+               Tools
+                </h2>
+                {Tools.map((tool) => (
+                  <LanguageBar
+                    key={tool.name}
+                    name={tool.name}
+                    level={tool.level}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </div>
