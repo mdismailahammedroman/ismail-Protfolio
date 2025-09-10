@@ -93,12 +93,9 @@ export const Resume = () => {
   return (
     <div className="md:ml-64 flex-1 font-roboto">
       <section className="min-h-screen px-4 md:px-10 py-8 bg-white text-gray-800">
-        <motion.div
+        <div
           className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-10"
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
+         
         >
           <div
             className="text-white font-bold text-2xl px-6 h-18 p-3 inline-block lg:-ml-14"
@@ -113,7 +110,7 @@ export const Resume = () => {
           <p className="text-gray-400 text-base italic font-bold">
             4+ Years of Experience
           </p>
-        </motion.div>
+        </div>
 
         <div className="container mx-auto flex flex-col items-start lg:flex-row my-3 ">
           {" "}

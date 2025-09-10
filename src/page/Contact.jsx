@@ -10,12 +10,9 @@ export const Contact = () => {
     <div className="md:ml-64 flex-1 font-roboto">
       <section className="min-h-screen px-4 md:px-10 py-8 bg-white text-gray-800">
         {/* Heading */}
-        <motion.div
+        <div
           className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-10"
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
+        
         >
           <div
             className="text-white font-bold text-2xl px-6 h-18 p-3 inline-block lg:-ml-14"
@@ -30,7 +27,7 @@ export const Contact = () => {
           <p className="text-gray-400 text-base italic font-bold">
             Get in Touch
           </p>
-        </motion.div>
+        </div>
 
         {/* Contact Content */}
         <div className="flex flex-col lg:flex-row gap-8">
@@ -131,3 +128,15 @@ export const Contact = () => {
     </div>
   );
 };
+
+
+
+{/* <div
+            className="absolute  h-24 w-48 flex bg-black rounded scale-left-then-right-out"
+            data-aos="fade-up"
+            data-aos-anchor-placement="center-bottom"
+          />
+ <div
+            className="h-24 w-48 bg-red-400 rounded overflow-hidden scale-left-in scale-left-in-delay"
+            data-aos="fade-up"
+          ></div>*/}

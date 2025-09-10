@@ -1,53 +1,18 @@
 /* eslint-disable no-unused-vars */
 import { motion } from "framer-motion";
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { TypewriterRoles } from "../component/TypewriterRoles";
 
-const titles = [
-  "Full Stack Developer",
-  "Backend Developer",
-  "Frontend Developer",
-];
 
 export const About = ({ speed = 100, pause = 1500 }) => {
-  const [text, setText] = useState("");
-  const [titleIndex, setTitleIndex] = useState(0);
-  const [charIndex, setCharIndex] = useState(0);
-  const [isDeleting, setIsDeleting] = useState(false);
-
-  useEffect(() => {
-    const currentTitle = titles[titleIndex];
-
-    let typingSpeed = isDeleting ? speed / 2 : speed;
-
-    const timeout = setTimeout(() => {
-      if (isDeleting) {
-        setText(currentTitle.substring(0, charIndex - 1));
-        setCharIndex(charIndex - 1);
-      } else {
-        setText(currentTitle.substring(0, charIndex + 1));
-        setCharIndex(charIndex + 1);
-      }
-
-      if (!isDeleting && charIndex === currentTitle.length) {
-        setTimeout(() => setIsDeleting(true), pause);
-      } else if (isDeleting && charIndex === 0) {
-        setIsDeleting(false);
-        setTitleIndex((prev) => (prev + 1) % titles.length);
-      }
-    }, typingSpeed);
-
-    return () => clearTimeout(timeout);
-  }, [charIndex, isDeleting, titleIndex, speed, pause]);
+ 
   return (
     <>
       <div className="md:ml-64 flex-1 font-roboto">
         <section className="min-h-screen px-4 md:px-10 py-8 bg-white text-gray-800">
-          <motion.div
+          <div
             className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-10"
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
+          
           >
             <div
             className="text-white font-bold text-2xl px-6 h-18 p-5 inline-block lg:-ml-15"
@@ -66,34 +31,16 @@ export const About = ({ speed = 100, pause = 1500 }) => {
               Hard working, Confident,Confident, Detail-Oriented, Self-Starter,
               Collaborative, Growth-Minded
             </p>
-          </motion.div>
+          </div>
 
           <motion.div
-            className="text-gray-700 text-base sm:text-lg leading-relaxed mt-4 mx-8"
+            className="text-gray-700 text-base sm:text-lg leading-relaxed mt-4 mx-10"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <motion.h1
-              className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-500"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8 }}
-            >
-              {text}
-              <span className="blinking-cursor">|</span>
-            </motion.h1>
-
-            <motion.h2
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5 }}
-              style={{ fontFamily: "monospace" }}
-            >
-              {text}
-              <span className="blinking-cursor">|</span>
-            </motion.h2>
+           <TypewriterRoles/>
           </motion.div>
           <div className=" px-4 md:px-10 text-justify w-5xl">
             <p className="mt-4 tracking-tighter font-medium text-gray-500">
@@ -128,10 +75,10 @@ export const About = ({ speed = 100, pause = 1500 }) => {
           </div>
           <motion.div
             className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-10 mx-0 sm:mx-4 md:mx-8 items-start mt-10"
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
+            initial={{ opacity: 0, y: -30 }}     // Starts 30px above
+            animate={{ opacity: 1, y: 0 }}       // Moves down to its normal position
+            exit={{ opacity: 0, y: -30 }}        // Optional: animate back up on exit
+            transition={{ duration: 0.5, ease: 'easeOut' }}
           >
             <div>
               <h2 className="text-lg sm:text-xl md:text-2xl font-bold mb-4 text-yellow-500">

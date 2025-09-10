@@ -36,11 +36,9 @@ export const Portfolio = () => {
     <div className="md:ml-64 flex-1 font-roboto">
       <section className="min-h-screen px-4 md:px-10 py-8 bg-white text-gray-800">
         {/* Heading */}
-        <motion.div
+        <div
           className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-10"
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5 }}
+          
         >
           <div
             className="text-white font-bold text-2xl px-6 h-18 p-3 inline-block lg:-ml-14"
@@ -55,12 +53,13 @@ export const Portfolio = () => {
           <p className="text-gray-400 text-base italic font-bold">
             My Best Works
           </p>
-        </motion.div>
+        </div>
 
         <motion.h2
-          initial={{ opacity: 0, y: -30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+          initial={{ opacity: 0, y: -30 }}     // Starts 30px above
+          animate={{ opacity: 1, y: 0 }}       // Moves down to its normal position
+          exit={{ opacity: 0, y: -30 }}        // Optional: animate back up on exit
+          transition={{ duration: 0.5, ease: 'easeOut' }}
           className="text-3xl font-bold text-center mb-12 underline decoration-amber-400"
         >
           Portfolio Projects
