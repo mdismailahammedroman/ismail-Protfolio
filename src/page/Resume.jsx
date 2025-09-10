@@ -2,6 +2,7 @@
 import { motion, useInView } from "framer-motion";
 import React, { useRef } from "react";
 import { LanguageBar } from "../component/LanguageBar";
+import { IoIosArrowForward } from "react-icons/io";
 
 const languages = [
   { name: "JavaScript", level: 80 },
@@ -72,15 +73,15 @@ const TimelineItem = ({
             backgroundColor: "#9bd952",
           }}
         >
-          <p className="text-center text-base text-gray-800 underline decoration-amber-400">
+          <p className="text-center text-xm font-bold text-gray-600  tracking-tighter">
             {year}
           </p>
         </div>
-        <h4 className="mb-3 font-bold text-lg md:text-2xl">{title}</h4>
-        <p className="text-sm md:text-base leading-snug text-gray-600">
+        <h4 className="mb-3 font-bold text-lg md:text-xl tracking-tighter text-gray-700">{title}</h4>
+        <p className="text-sm md:text-base leading-snug text-gray-500 tracking-tighter font-medium ">
           {subtitle}
         </p>
-        <p className="text-sm md:text-base leading-snug text-gray-600">
+        <p className="text-sm md:text-base leading-snug text-gray-400 italic">
           {location}
         </p>
       </div>
@@ -103,7 +104,7 @@ export const Resume = () => {
             className="text-white font-bold text-2xl px-6 h-18 p-3 inline-block lg:-ml-14"
             style={{
               clipPath:
-                "polygon(0 0, 100% 0%, 100% 73%, 13% 73%, 13% 100%, 0 73%, 0 14%)",
+                "polygon(0 0, 100% 0%, 100% 73%, 12% 73%, 12% 100%, 0 73%, 0 14%)",
               backgroundColor: "#facc15",
             }}
           >
@@ -118,11 +119,11 @@ export const Resume = () => {
           {" "}
           <div className="flex flex-col w-full lg:sticky md:top-36 lg:w-1/3 mt-2 md:mt-12 px-8">
             {" "}
-            <p className="text-xl md:text-2xl leading-normal md:leading-relaxed mb-2 text-gray-800 uppercase tracking-loose underline decoration-amber-400">
+            <p className="text-xl tracking-tighter font-bold md:text-2xl leading-normal md:leading-relaxed mb-2 text-gray-500  tracking-loose">
               {" "}
               Education{" "}
             </p>{" "}
-            <p className="text-sm md:text-base text-gray-600 mb-4 ">
+            <p className="text-sm md:text-base font-medium  text-gray-400 mb-4 tracking-tighter italic">
               {" "}
               My academic path reflects continuous learning and adapting to new
               challenges.{" "}
@@ -195,12 +196,13 @@ export const Resume = () => {
           {" "}
           <div className="flex flex-col w-full lg:sticky md:top-36 lg:w-1/3  md:mt-12 px-8">
             {" "}
-            <p className="text-xl md:text-2xl leading-normal md:leading-relaxed mb-2
-             text-gray-800 uppercase tracking-loose underline decoration-amber-400">
+            <p className="text-xl tracking-tighter font-bold md:text-2xl leading-normal md:leading-relaxed mb-2 text-gray-500  tracking-loose">
+
               {" "}
               Skills
             </p>
-            <p className="text-base text-gray-600 mb-4">
+            <p className="text-sm md:text-base font-medium text-gray-400 mb-4 tracking-tighter italic">
+
               Skilled in building complete Web Applications from Frontend to
               Backend.
             </p>
@@ -208,10 +210,12 @@ export const Resume = () => {
           <div className="lg:w-2/3 w-full">
             <div className="relative p-5">
             <div className="px-4 md:px-10">
-                <h2 className="text-xl font-bold text-gray-600 mb-6 underline
-                 decoration-amber-400">
-               Languages
-                </h2>
+                <div className="flex items-center">
+                    <IoIosArrowForward className="mt-2"/>
+                <h2  className=" mb-2 text-lg italic font-medium  text-gray-400 mt-4 oration-amber-400">
+                  Languages
+                  </h2>
+                </div>
                 {languages.map((lang) => (
                   <LanguageBar
                     key={lang.name}
@@ -221,9 +225,12 @@ export const Resume = () => {
                 ))}
               </div>
               <div className="px-4 md:px-10">
-                <h2 className="text-xl font-bold text-gray-600 mb-6 underline decoration-amber-400">
-                Frameworks
-                </h2>
+                <div className="flex items-center">
+                    <IoIosArrowForward className="mt-2"/>
+                 <h2 className=" mb-2 text-lg italic font-medium  text-gray-400 mt-4 ">
+                  Frameworks
+                  </h2>
+                </div>
                 {Frameworks.map((Frame) => (
                   <LanguageBar
                     key={Frame.name}
@@ -233,9 +240,12 @@ export const Resume = () => {
                 ))}
               </div>
               <div className="px-4 md:px-10">
-                <h2 className="text-xl font-bold text-gray-600 mb-6 underline decoration-amber-400">
-                Database
-                </h2>
+                <div className="flex items-center">
+                    <IoIosArrowForward className="mt-2"/>
+                 <h2 className=" mb-2 text-lg italic font-medium  text-gray-400 mt-4 ">
+                  Database
+                  </h2>
+                </div>
                 {Database.map((data) => (
                   <LanguageBar
                     key={data.name}
@@ -245,11 +255,14 @@ export const Resume = () => {
                 ))}
               </div>
               <div className="px-4 md:px-10">
-                <h2 className="text-xl font-bold text-gray-600 mb-6 underline decoration-amber-400">
-                Libraries & APIs
+                <div className="flex items-center">
+                    <IoIosArrowForward className="mt-2"/>
+                 <h2 className=" mb-2 text-lg italic font-medium  text-gray-400 mt-4 ">
+                  Libraries & APIs
+                  </h2>
 
 
-                </h2>
+                </div>
                 {Libraries.map((librari) => (
                   <LanguageBar
                     key={librari.name}
@@ -259,11 +272,14 @@ export const Resume = () => {
                 ))}
               </div>
               <div className="px-4 md:px-10">
-                <h2 className="text-xl font-bold text-gray-600 mb-6 underline decoration-amber-400">
-               Storage
+                <div className="flex items-center">
+                    <IoIosArrowForward className="mt-2"/>
+                <h2  className=" mb-2 text-lg italic font-medium  text-gray-400 mt-4 ">
+                  Storage
+                  </h2>
 
 
-                </h2>
+                </div>
                 {Storage.map((lang) => (
                   <LanguageBar
                     key={lang.name}
@@ -273,9 +289,12 @@ export const Resume = () => {
                 ))}
               </div>
               <div className="px-4 md:px-10">
-                <h2 className="text-xl font-bold text-gray-600 mb-6 underline decoration-amber-400">
-               Tools
-                </h2>
+                <div className="flex items-center">
+                    <IoIosArrowForward className="mt-2"/>
+                <h2 className=" mb-2 text-lg italic font-medium  text-gray-400 mt-4 "> 
+                  Tools
+                  </h2>
+                </div>
                 {Tools.map((tool) => (
                   <LanguageBar
                     key={tool.name}

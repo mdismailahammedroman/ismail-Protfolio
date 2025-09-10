@@ -24,42 +24,42 @@ export const Navbar = ({ open = false }) => {
         <h1 className="text-xl font-bold mt-10">Md. Ismail Ahammed</h1>{" "}
         <p className="text-sm text-gray-500 mb-6">Full Stack Web Developer</p>{" "}
       </div>
-      <nav class="w-full">
-        <ul class="space-y-2 text-center">
+      <nav className="w-full">
+        <ul className="space-y-2 text-center">
           <Link
-            to=""
-            class="tracking-wide nav-link block border-b border-t-2 border-gray-200 py-2 border-l-6 border-r-4 hover:border-r-yellow-400 hover:border-l-yellow-400 transition active"
+            to="/"
+            className="tracking-tighter font-medium nav-link block border-b border-t-2 border-gray-200 py-2 border-l-6 border-r-6 hover:border-r-yellow-400 hover:border-l-yellow-400 transition active"
           >
             Home
           </Link>
           <Link
             to="/about"
-            class=" tracking-wide nav-link block py-2 border-b-2 border-t-2 border-gray-200 border-l-6 border-r-4 hover:border-r-yellow-400 hover:border-l-yellow-400 transition"
+            className=" tracking-tighter font-medium nav-link block py-2 border-b-2 border-t-2 border-gray-200 border-l-6 border-r-6 hover:border-r-yellow-400 hover:border-l-yellow-400 transition"
           >
             About me
           </Link>
           <Link
             to="/resume"
-            class="tracking-wide nav-link block py-2 border-b-2 border-t-2 border-gray-200 border-l-6 border-r-4 hover:border-r-yellow-400 hover:border-l-yellow-400 transition"
+            className="tracking-tighter font-medium nav-link block py-2 border-b-2 border-t-2 border-gray-200 border-l-6 border-r-6 hover:border-r-yellow-400 hover:border-l-yellow-400 transition"
           >
             Resume
           </Link>
           <Link
-            to="/portfolio"
-            class="tracking-wide nav-link block py-2 border-b-2 border-t-2 border-gray-200 border-l-6 border-r-4 hover:border-r-yellow-400 hover:border-l-yellow-400 transition"
+            to="/Portfolio"
+            className="tracking-tighter font-medium nav-link block py-2 border-b-2 border-t-2 border-gray-200 border-l-6 border-r-6 hover:border-r-yellow-400 hover:border-l-yellow-400 transition"
           >
             Portfolio
           </Link>
           <Link
             to="/contact"
-            class="tracking-wide nav-link block py-2 border-b-2 border-t-2 border-gray-200 border-l-6 border-r-4 hover:border-r-yellow-400 hover:border-l-yellow-400 transition"
+            className="tracking-tighter font-medium nav-link block py-2 border-b-2 border-t-2 border-gray-200 border-l-6 border-r-6 hover:border-r-yellow-400 hover:border-l-yellow-400 transition"
           >
             Contact
           </Link>
         </ul>
       </nav>
 
-      <div class="mt-20 flex space-x-4 text-gray-500 items-center justify-center ">
+      <div className="mt-20 flex space-x-4 text-gray-500 items-center justify-center ">
        <SocialLinks/>
       </div>
     </aside>
