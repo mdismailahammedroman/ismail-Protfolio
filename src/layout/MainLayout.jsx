@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Navbar } from "../component/navbar";
 import { Outlet } from "react-router";
+import { Navbar } from "../component/navbar";
 
 export const MainLayout = () => {
   const [menuOpen, setMenuOpen] = useState(false)
