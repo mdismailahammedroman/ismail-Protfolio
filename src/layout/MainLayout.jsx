@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Outlet } from "react-router";
-import { Navbar } from "../component/navbar";
+import { Sidebar } from "../component/Sidebar";
 
 export const MainLayout = () => {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -19,7 +19,7 @@ export const MainLayout = () => {
       )}
 
 
-      <Navbar open={menuOpen} onLinkClick={() => setMenuOpen(false)} />
+      <Sidebar open={menuOpen} onLinkClick={() => setMenuOpen(false)} />
      
       <div className="hidden lg:block w-10 min-h-screen"></div>
   <Outlet/>

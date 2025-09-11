@@ -4,36 +4,36 @@ import React from "react";
 import { TypewriterRoles } from "../component/TypewriterRoles";
 
 
-export const About = ({ speed = 100, pause = 1500 }) => {
+export const About = () => {
  
   return (
-    <>
+   
+   
+      
       <div className="md:ml-64 flex-1 font-roboto">
-        <section className="min-h-screen px-4 md:px-10 py-8 bg-white text-gray-800">
+      <section className="min-h-screen px-4 md:px-10 py-8 bg-white text-gray-800">
+        {/* Heading */}
+        <div
+          className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-10"
+        
+        >
           <div
-            className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-10"
-          
-          >
-            <div
-            className="text-white font-bold text-2xl px-6 h-18 p-5 inline-block lg:-ml-15"
+            className="text-white font-bold text-2xl px-6 h-18 p-3 inline-block lg:-ml-14"
             style={{
               clipPath:
-                "polygon(4% 0, 100% 0%, 100% 75%, 12% 75%, 12% 100%, 4% 75%, 4% 53%)",
+                "polygon(0 0, 100% 0%, 100% 73%, 12% 73%, 12% 100%, 0 73%, 0 14%)",
               backgroundColor: "#facc15",
             }}
           >
-              <p className="-mt-1 sm:-mt-3 ">About Me</p>
-            </div>
-            <p
-              className="text-gray-400 text-sm sm:text-base font italic font-bold
-"
-            >
-              Hard working, Confident,Confident, Detail-Oriented, Self-Starter,
-              Collaborative, Growth-Minded
-            </p>
+            <p>About Me</p>
           </div>
+          <p className="text-gray-400 text-base italic font-bold">
+          Hard working, Confident,Confident, Detail-Oriented, Self-Starter,
+          Collaborative, Growth-Minded
+          </p>
+        </div>
 
-          <motion.div
+        <motion.div
             className="text-gray-700 text-base sm:text-lg leading-relaxed mt-4 mx-10"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -42,8 +42,8 @@ export const About = ({ speed = 100, pause = 1500 }) => {
           >
            <TypewriterRoles/>
           </motion.div>
-          <div className=" px-4 md:px-10 text-justify w-5xl">
-            <p className="mt-4 tracking-tighter font-medium text-gray-500">
+          <div className=" mx-0 sm:mx-4 md:mx-8 items-start mt-10  text-justify max-w-5xl">
+          <p className="mt-4 tracking-tighter font-medium text-gray-500">
               I hold a Bachelor's degree in{" "}
               <strong className="text-gray-800  ">
                 Computer Science & Engineering (BSc in CSE)
@@ -70,8 +70,6 @@ export const About = ({ speed = 100, pause = 1500 }) => {
               values clean code, and enjoys collaborating with other developers
               to bring ideas to life.
             </p>
-
-            
           </div>
           <motion.div
             className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-10 mx-0 sm:mx-4 md:mx-8 items-start mt-10"
@@ -254,33 +252,7 @@ export const About = ({ speed = 100, pause = 1500 }) => {
               </div>
             </div>
           </motion.div>
-
-          {/* Clients */}
-          <motion.div className="mt-12 sm:mt-16 mx-4 sm:mx-6">
-            <h2 className="text-lg sm:text-xl md:text-2xl font-bold mb-3 sm:mb-4 text-yellow-500">
-              Clients
-            </h2>
-            <p className="text-gray-400 text-sm sm:text-base font italic font-bold">
-              Some of the brands and teams I’ve collaborated with.
-            </p>
-
-            {/* Logo row ( wordmarks) */}
-            <div className="flex flex-wrap items-center gap-x-10 gap-y-6 opacity-80">
-              {["Rentee", "Microtask", "WebDryer", "IarDigital"].map(
-                (client, index) => (
-                  <motion.span
-                    key={client}
-                    className="text-2xl font-bold tracking-wide text-gray-400 cursor-pointer"
-                    whileHover={{ scale: 1.1, rotate: -2 }}
-                    transition={{ type: "spring", stiffness: 300 }}
-                  >
-                    {client}
-                  </motion.span>
-                )
-              )}
-            </div>
-          </motion.div>
-          {/* Fun Facts */}
+           {/* Fun Facts */}
           <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-3 sm:mb-4 text-yellow-500 mt-4 mx-6">
             Fun Facts
           </h3>
@@ -447,8 +419,8 @@ export const About = ({ speed = 100, pause = 1500 }) => {
               </p>
             </motion.div>
           </motion.div>
-          {/* Services Section */}
-          <motion.div
+           {/* Services Section */}
+           <motion.div
             className="mt-12 sm:mt-16 mx-4 sm:mx-6"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -522,9 +494,7 @@ export const About = ({ speed = 100, pause = 1500 }) => {
               </motion.div>
             </div>
           </motion.div>
-        </section>
-      </div>
-      
-    </>
+      </section>
+    </div>
   );
 };
