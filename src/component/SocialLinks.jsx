@@ -5,7 +5,7 @@ const SocialLinks = () => {
   return (
     <div className="mt-20 flex space-x-4 text-gray-500 items-center justify-center">
       <Link
-        to="https://www.facebook.com/ismailahmmedroman1/"
+        to="https://www.facebook.com/mdismailahammedroman/"
         target="_blank"
         rel="noopener noreferrer"
         className="bg-gray-200 h-12 w-12 items-center flex justify-center  hover:text-yellow-500 rounded"
@@ -21,7 +21,7 @@ const SocialLinks = () => {
         <FaTwitterSquare className="text-2xl" />
       </Link>
       <Link
-        to="https://www.linkedin.com/in/md-ismail-ahammed-roman-773082127/"
+        to="https://www.linkedin.com/in/mdismailahammedroman/"
         target="_blank"
         rel="noopener noreferrer"
         className="bg-gray-200 h-12 w-12 items-center flex justify-center hover:text-yellow-500 rounded"
@@ -29,7 +29,7 @@ const SocialLinks = () => {
         <FaLinkedin className="text-2xl" />
       </Link>
       <Link
-        to="https://github.com/ismailahammed1"
+        to="https://github.com/mdismailahammedroman"
         target="_blank"
         rel="noopener noreferrer"
         className="bg-gray-200 h-12 w-12 items-center flex justify-center hover:text-yellow-500 rounded"
