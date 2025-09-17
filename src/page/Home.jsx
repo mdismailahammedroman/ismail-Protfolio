@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 
 import React from 'react';
-import ismail1 from '../assets/Ismail-ahammed-roman.-01.jpeg';
+import ismail1 from '../assets/ismsmile.jpeg';
 import { TypewriterRoles } from '../component/TypewriterRoles';
 import { motion } from 'framer-motion';
 
@@ -11,14 +11,14 @@ export const Home = () => {
  
 
   return (
-    <div className="md:ml-64 flex-1 font-roboto overflow-hidden">
+    <div className="md:ml-64 flex-1 overflow-hidden ">
       <section
         className="relative min-h-screen px-4 md:px-10 py-8 bg-cover bg-center bg-no-repeat text-white background"
       >
         {/* ✅ Overlay */}
-        <div className="absolute inset-0 bg-black/70 z-0"></div>
+        <div className="absolute inset-0 bg-black/40 z-0"></div>
         <motion.div
-  className="absolute inset-0 h-full w-full bg-black/40 z-20"
+  className="absolute inset-0 h-full w-full bg-black/60 z-20"
   initial={{ x: '0%' }}
   animate={{ x: '100%' }}
   transition={{ duration: 1.2, ease: 'easeInOut' }}
@@ -28,19 +28,10 @@ export const Home = () => {
       
 
         {/* ✅ Content wrapper should be relative and above overlay */}
-        <div className="relative z-10">
+        <div className="relative z-10 ">
           {/* Heading */}
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-10">
-            <div
-              className=" text-white font-bold text-2xl px-6 h-18 p-3 mt inline-block lg:-ml-10"
-              style={{
-                clipPath:
-                  'polygon(0 0, 100% 0%, 100% 73%, 12% 73%, 12% 73%, 0 73%, 0 14%)',
-                backgroundColor: '#facc15',
-              }}
-            >
-              <p>Home</p>
-            </div>
+           
             <p className="text-gray-200 text-base italic font-bold">
               Ismail Ahammed Roman
             </p>
@@ -52,18 +43,18 @@ export const Home = () => {
           <div className="w-full flex flex-col  items-center gap-10">
         
             {/* Images */}
-            <div className="flex justify-center items-center gap-4">
+            <div className="flex justify-center items-center gap-2">
             <motion.div
   initial={{ scaleX: 0 }}
   animate={{ scaleX: 1 }}
-  transition={{ duration: 0.6, delay: 1.5, ease: 'easeInOut' }}
+  transition={{ duration: 0.8, delay: 1.5, ease: 'easeInOut' }}
   style={{ originX: 0 }}
   className="w-16 h-48 overflow-hidden"
 >
   <img
     src={ismail1}
     alt="Portrait of Ismail"
-    className="w-full h-full object-cover object-[5%] scale-100"
+    className="w-full h-full object-cover object-[5%] scale-180"
   />
 </motion.div>
 
@@ -77,7 +68,7 @@ export const Home = () => {
                 <img
                   src={ismail1}
                   alt="Portrait of Ismail - left"
-                  className="w-full h-full object-cover object-[11%] scale-150"
+                  className="w-full h-full object-cover object-[11%] scale-130"
                 />
               </motion.div>
 
@@ -89,7 +80,7 @@ export const Home = () => {
                 <img
                   src={ismail1}
                   alt="Portrait of Ismail - center"
-                  className="w-full h-full object-cover object-center scale-[1.2]"
+                  className="w-full h-full object-cover object-center scale-[1]"
                 />
               </motion.div>
 
@@ -102,7 +93,7 @@ export const Home = () => {
                 <img
                   src={ismail1}
                   alt="Portrait of Ismail - right"
-                  className="w-full h-full object-cover object-[88%] opacity-80 scale-150"
+                  className="w-full h-full object-cover object-[88%] opacity-80 scale-120 mt-3"
                 />              </motion.div>
 
               <motion.div
@@ -115,15 +106,16 @@ export const Home = () => {
                 <img
                   src={ismail1}
                   alt="Portrait of Ismail - far right"
-                  className="w-full h-full object-cover object-[100%] opacity-70 scale-150"
+                  className="w-full h-full object-cover object-[100%] opacity-70 scale-160"
                 />
               </motion.div>
             </div>
 
             {/* Text */}
-            <div className="ml-0 lg:ml-8 max-w-lg text-left">
-              <h1 className="text-4xl font-bold mb-2">Md. Ismail Ahammed</h1>
-              <p className="text-xl mb-6 font-mono tracking-tighter ">
+            <div className="ml-0 lg:ml-8 max-w-5xl text-left lg:mt-30" >
+              <h1 className="text-4xl font-bold mb-2 ">Md. Ismail Ahammed</h1>
+             <div className=''>
+             <p className="text-xl mb-6 tracking-tighter ">
                 <TypewriterRoles />
               </p>
 
@@ -141,6 +133,7 @@ export const Home = () => {
                   Available
                 </li>
               </ul>
+             </div>
             </div>
           </div>
         </div>

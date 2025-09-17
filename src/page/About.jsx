@@ -10,18 +10,18 @@ export const About = () => {
    
    
       
-      <div className="md:ml-64 flex-1 font-roboto">
-      <section className="min-h-screen px-4 md:px-10 py-8 bg-white text-gray-800">
+      <div className="md:ml-64 flex-1 font-helvetica">
+      <section className="min-h-screen px-4 md:px-10 py-8 bg-white">
         {/* Heading */}
         <div
           className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-10"
         
         >
           <div
-            className="text-white font-bold text-2xl px-6 h-18 p-3 inline-block lg:-ml-14"
-            style={{
-              clipPath:
-                "polygon(0 0, 100% 0%, 100% 73%, 12% 73%, 12% 100%, 0 73%, 0 14%)",
+              className="text-white font-bold text-2xl px-6 h-20 p-3 inline-block lg:-ml-14 w-40"
+              style={{
+                clipPath:
+                  "polygon(0 0, 100% 0%, 100% 73%, 12% 73%, 12% 100%, 0 73%, 0 14%)",
               backgroundColor: "#facc15",
             }}
           >
@@ -34,7 +34,7 @@ export const About = () => {
         </div>
 
         <motion.div
-            className="text-gray-700 text-base sm:text-lg leading-relaxed mt-4 mx-10"
+            className="text-gray-700 text-base sm:text-lg leading-relaxed mt-4 mx-10 tracking-tight font-bold"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -43,29 +43,29 @@ export const About = () => {
            <TypewriterRoles/>
           </motion.div>
           <div className=" mx-0 sm:mx-4 md:mx-8 items-start mt-10  text-justify max-w-5xl">
-          <p className="mt-4 tracking-tighter font-medium text-gray-500">
+          <p className="mt-4 tracking-tight font-medium text-gray-500">
               I hold a Bachelor's degree in{" "}
-              <strong className="text-gray-800  ">
+              <strong className="text-gray-700 tracking-tighter ">
                 Computer Science & Engineering (BSc in CSE)
               </strong>
               , and I specialize in modern web development using the{" "}
-              <strong className="text-gray-800  ">MERN stack</strong>{" "}
-              <strong className="text-gray-800  "> (MongoDB, Express.js, React.js, and Node.js).
+              <strong className="text-gray-700 tracking-tighter ">MERN stack</strong>{" "}
+              <strong className="text-gray-700 tracking-tighter "> (MongoDB, Express.js, React.js, and Node.js).
               </strong>{" "}
             </p>
 
-            <p className="mt-4 tracking-tighter font-medium text-gray-500">
+            <p className="mt-4 tracking-tight font-medium text-gray-500">
               I'm proficient in technologies like{" "}
-              <strong className="text-gray-800  ">Node.js</strong>,{" "}
-              <strong className="text-gray-800  ">React.js</strong>, and{" "}
-              <strong className="text-gray-800  ">TypeScript</strong>,
+              <strong className="text-gray-700 tracking-tighter ">Node.js</strong>,{" "}
+              <strong className="text-gray-700 tracking-tighter ">React.js</strong>, and{" "}
+              <strong className="text-gray-700 tracking-tighter ">TypeScript</strong>,
               with a strong focus on building scalable, efficient, and
               user-friendly web applications. Whether it's developing robust
               backend APIs or crafting intuitive frontend interfaces, I strive
               to deliver high-quality solutions tailored to real-world needs.
             </p>
 
-            <p className="mt-4 tracking-tighter font-medium text-gray-500">
+            <p className="mt-4 tracking-tight font-medium text-gray-500">
               I'm a lifelong learner who thrives in fast-paced environments,
               values clean code, and enjoys collaborating with other developers
               to bring ideas to life.
@@ -252,6 +252,82 @@ export const About = () => {
               </div>
             </div>
           </motion.div>
+
+              {/* Services Section */}
+              <motion.div
+            className="mt-12 sm:mt-16 mx-4 sm:mx-6"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-lg sm:text-xl md:text-2xl font-bold mb-3 sm:mb-4 text-yellow-500">
+              Services
+            </h2>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 text-gray-700">
+              {/* Service Card 1 */}
+              <motion.div
+                className="p-4 border hover:border-amber-400 rounded-lg shadow-sm bg-white cursor-pointer"
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                whileHover={{
+                  scale: 1.05,
+                  boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
+                }}
+                transition={{ duration: 0.3 }}
+                viewport={{ once: true }}
+              >
+                <h3 className="font-semibold mb-2">
+                  Full-Stack Web Development
+                </h3>
+                <p>
+                  End-to-end development using MERN stack with optimized
+                  performance.
+                </p>
+              </motion.div>
+
+              {/* Service Card 2 */}
+              <motion.div
+                className="p-4 border  hover:border-amber-400 rounded-lg shadow-sm bg-white cursor-pointer"
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                whileHover={{
+                  scale: 1.05,
+                  boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
+                }}
+                transition={{ duration: 0.3, delay: 0.1 }}
+                viewport={{ once: true }}
+              >
+                <h3 className="font-semibold mb-2">Custom Admin Dashboard</h3>
+                <p>
+                  Fully functional dashboards with user, product & order
+                  management.
+                </p>
+              </motion.div>
+
+              {/* Service Card 3 */}
+              <motion.div
+                className="p-4 border  hover:border-amber-400 rounded-lg shadow-sm bg-white cursor-pointer"
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                whileHover={{
+                  scale: 1.05,
+                  boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
+                }}
+                transition={{ duration: 0.3, delay: 0.2 }}
+                viewport={{ once: true }}
+              >
+                <h3 className="font-semibold mb-2">
+                  Portfolio / Landing Pages
+                </h3>
+                <p>
+                  Responsive & animated personal/brand sites tailored for modern
+                  needs.
+                </p>
+              </motion.div>
+            </div>
+          </motion.div>
            {/* Fun Facts */}
           <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-3 sm:mb-4 text-yellow-500 mt-4 mx-6">
             Fun Facts
@@ -419,81 +495,7 @@ export const About = () => {
               </p>
             </motion.div>
           </motion.div>
-           {/* Services Section */}
-           <motion.div
-            className="mt-12 sm:mt-16 mx-4 sm:mx-6"
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-lg sm:text-xl md:text-2xl font-bold mb-3 sm:mb-4 text-yellow-500">
-              Services
-            </h2>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 text-gray-700">
-              {/* Service Card 1 */}
-              <motion.div
-                className="p-4 border hover:border-amber-400 rounded-lg shadow-sm bg-white cursor-pointer"
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                whileHover={{
-                  scale: 1.05,
-                  boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
-                }}
-                transition={{ duration: 0.3 }}
-                viewport={{ once: true }}
-              >
-                <h3 className="font-semibold mb-2">
-                  Full-Stack Web Development
-                </h3>
-                <p>
-                  End-to-end development using MERN stack with optimized
-                  performance.
-                </p>
-              </motion.div>
-
-              {/* Service Card 2 */}
-              <motion.div
-                className="p-4 border  hover:border-amber-400 rounded-lg shadow-sm bg-white cursor-pointer"
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                whileHover={{
-                  scale: 1.05,
-                  boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
-                }}
-                transition={{ duration: 0.3, delay: 0.1 }}
-                viewport={{ once: true }}
-              >
-                <h3 className="font-semibold mb-2">Custom Admin Dashboard</h3>
-                <p>
-                  Fully functional dashboards with user, product & order
-                  management.
-                </p>
-              </motion.div>
-
-              {/* Service Card 3 */}
-              <motion.div
-                className="p-4 border  hover:border-amber-400 rounded-lg shadow-sm bg-white cursor-pointer"
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                whileHover={{
-                  scale: 1.05,
-                  boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
-                }}
-                transition={{ duration: 0.3, delay: 0.2 }}
-                viewport={{ once: true }}
-              >
-                <h3 className="font-semibold mb-2">
-                  Portfolio / Landing Pages
-                </h3>
-                <p>
-                  Responsive & animated personal/brand sites tailored for modern
-                  needs.
-                </p>
-              </motion.div>
-            </div>
-          </motion.div>
+       
       </section>
     </div>
   );

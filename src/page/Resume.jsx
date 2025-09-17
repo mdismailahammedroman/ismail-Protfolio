@@ -91,14 +91,14 @@ const TimelineItem = ({
 
 export const Resume = () => {
   return (
-    <div className="md:ml-64 flex-1 font-roboto">
+    <div className="md:ml-64 flex-1 ">
       <section className="min-h-screen px-4 md:px-10 py-8 bg-white text-gray-800">
         <div
           className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-10"
          
         >
           <div
-            className="text-white font-bold text-2xl px-6 h-18 p-3 inline-block lg:-ml-14"
+          className="text-white font-bold text-2xl px-6 h-20 p-3 inline-block lg:-ml-14 w-40"
             style={{
               clipPath:
                 "polygon(0 0, 100% 0%, 100% 73%, 12% 73%, 12% 100%, 0 73%, 0 14%)",

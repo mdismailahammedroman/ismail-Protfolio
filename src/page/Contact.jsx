@@ -7,7 +7,7 @@ import { FaRegCheckCircle } from 'react-icons/fa';
 
 export const Contact = () => {
   return (
-    <div className="md:ml-64 flex-1 font-roboto">
+    <div className="md:ml-64 flex-1">
       <section className="min-h-screen px-4 md:px-10 py-8 bg-white text-gray-800">
         {/* Heading */}
         <div
@@ -15,10 +15,10 @@ export const Contact = () => {
         
         >
           <div
-            className="text-white font-bold text-2xl px-6 h-18 p-3 inline-block lg:-ml-14"
-            style={{
-              clipPath:
-                "polygon(0 0, 100% 0%, 100% 73%, 12% 73%, 12% 100%, 0 73%, 0 14%)",
+             className="text-white font-bold text-2xl px-6 h-20 p-3 inline-block lg:-ml-14 w-40"
+             style={{
+               clipPath:
+                 "polygon(0 0, 100% 0%, 100% 73%, 12% 73%, 12% 100%, 0 73%, 0 14%)",
               backgroundColor: "#facc15",
             }}
           >
@@ -129,14 +129,3 @@ export const Contact = () => {
   );
 };
 
-
-
-{/* <div
-            className="absolute  h-24 w-48 flex bg-black rounded scale-left-then-right-out"
-            data-aos="fade-up"
-            data-aos-anchor-placement="center-bottom"
-          />
- <div
-            className="h-24 w-48 bg-red-400 rounded overflow-hidden scale-left-in scale-left-in-delay"
-            data-aos="fade-up"
-          ></div>*/}

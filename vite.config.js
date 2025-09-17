@@ -6,9 +6,21 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   base: "./",
 
-  plugins: [react(), tailwindcss()],
+  plugins: [
+    react(),
+    tailwindcss({
+      theme: {
+        extend: {
+          fontFamily: {
+            helvetica: ['"Helvetica Neue"', 'Helvetica', 'Arial', 'sans-serif'],
+            roboto: ['Roboto', 'sans-serif'],
+            oswald: ['Oswald', 'sans-serif'],
+          },
+        },
+      },
+    }),
+  ],
   build: {
     outDir: "dist"
   },
-
 })
