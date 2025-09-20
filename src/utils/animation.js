@@ -28,3 +28,33 @@ export const fadeUp = {
       },
     }),
   };
+
+
+export const swingLeftFwd = {
+  initial: {
+    rotateY: 0,
+    transformOrigin: "left bottom",
+  },
+  animate: {
+    rotateY: -180,
+    transition: {
+      duration: 0.4,
+      ease: [0.25, 0.46, 0.45, 0.94],
+    },
+  },
+};
+
+export const swingRightFwd = {
+  initial: {
+    rotateY: 0,
+    transformOrigin: "right bottom",
+  },
+  animate: {
+    rotateY: 180,
+    transition: {
+      duration: 0.4,
+      ease: [0.25, 0.46, 0.45, 0.94],
+    },
+  },
+};
+

@@ -16,7 +16,7 @@ export const Home = () => {
         className="relative min-h-screen px-4 md:px-10 py-8 bg-cover bg-center bg-no-repeat text-white background"
       >
         {/* ✅ Overlay */}
-        <div className="absolute inset-0 bg-black/40 z-0"></div>
+        <div className="absolute inset-0 bg-black/60 z-0"></div>
         <motion.div
   className="absolute inset-0 h-full w-full bg-black/60 z-20"
   initial={{ x: '0%' }}

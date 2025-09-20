@@ -1,37 +1,9 @@
 /* eslint-disable no-unused-vars */
 import { motion, useInView } from "framer-motion";
 import React, { useRef } from "react";
-import { LanguageBar } from "../component/LanguageBar";
-import { IoIosArrowForward } from "react-icons/io";
+import { skillSections } from "../data/skillSections";
+import { SkillSection } from "../component/SkillSection";
 
-const languages = [
-  { name: "JavaScript", level: 80 },
-  { name: "Typescript", level: 75 },
-  { name: "HTML & CSS", level: 98 },
-  { name: "SASS / SCSS", level: 85 },
-];
-const Frameworks=[
-  { name: "Express.js:", level: 70 },
-  { name: "NextJs:", level: 40 },
-  { name: "Tailwind CSS:", level: 90 },
-]
-const Database=[
-  { name: "MongoDB", level: 75 },
-  { name: "postgresql", level: 70 },
-]
-const Libraries =[
-  { name: "React", level: 80 },
-  { name: "React Router", level: 90 },
-  { name: "Redux, React Hook", level: 75 },
-  { name: " Framer Motion", level: 75 },
-  { name: " RESTful API;", level: 80 },
-]
-const Storage=[
-  { name: "FireBase, Vercel", level: 90 },
-]
-const Tools=[
-  { name: "GitHub, Git, Vscode", level: 90 },
-]
 
 const TimelineItem = ({
   direction = "left",
@@ -77,7 +49,9 @@ const TimelineItem = ({
             {year}
           </p>
         </div>
-        <h4 className="mb-3 font-bold text-lg md:text-xl tracking-tighter text-gray-700">{title}</h4>
+        <h4 className="mb-3 font-bold text-lg md:text-xl tracking-tighter text-gray-700">
+          {title}
+        </h4>
         <p className="text-sm md:text-base leading-snug text-gray-500 tracking-tighter font-medium ">
           {subtitle}
         </p>
@@ -93,12 +67,9 @@ export const Resume = () => {
   return (
     <div className="md:ml-64 flex-1 ">
       <section className="min-h-screen px-4 md:px-10 py-8 bg-white text-gray-800">
-        <div
-          className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-10"
-         
-        >
+        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-10">
           <div
-          className="text-white font-bold text-2xl px-6 h-20 p-3 inline-block lg:-ml-14 w-40"
+            className="text-white font-bold text-2xl px-6 h-20 p-3 inline-block lg:-ml-14 w-40"
             style={{
               clipPath:
                 "polygon(0 0, 100% 0%, 100% 73%, 12% 73%, 12% 100%, 0 73%, 0 14%)",
@@ -194,112 +165,24 @@ export const Resume = () => {
           <div className="flex flex-col w-full lg:sticky md:top-36 lg:w-1/3  md:mt-12 px-8">
             {" "}
             <p className="text-xl tracking-tighter font-bold md:text-2xl leading-normal md:leading-relaxed mb-2 text-gray-500  tracking-loose">
-
               {" "}
               Skills
             </p>
             <p className="text-sm md:text-base font-medium text-gray-400 mb-4 tracking-tighter italic">
-
               Skilled in building complete Web Applications from Frontend to
               Backend.
             </p>
           </div>
           <div className="lg:w-2/3 w-full">
             <div className="relative p-5">
-            <div className="px-4 md:px-10">
-                <div className="flex items-center">
-                    <IoIosArrowForward className="mt-2"/>
-                <h2  className=" mb-2 text-lg italic font-medium  text-gray-400 mt-4 oration-amber-400">
-                  Languages
-                  </h2>
-                </div>
-                {languages.map((lang) => (
-                  <LanguageBar
-                    key={lang.name}
-                    name={lang.name}
-                    level={lang.level}
-                  />
-                ))}
-              </div>
-              <div className="px-4 md:px-10">
-                <div className="flex items-center">
-                    <IoIosArrowForward className="mt-2"/>
-                 <h2 className=" mb-2 text-lg italic font-medium  text-gray-400 mt-4 ">
-                  Frameworks
-                  </h2>
-                </div>
-                {Frameworks.map((Frame) => (
-                  <LanguageBar
-                    key={Frame.name}
-                    name={Frame.name}
-                    level={Frame.level}
-                  />
-                ))}
-              </div>
-              <div className="px-4 md:px-10">
-                <div className="flex items-center">
-                    <IoIosArrowForward className="mt-2"/>
-                 <h2 className=" mb-2 text-lg italic font-medium  text-gray-400 mt-4 ">
-                  Database
-                  </h2>
-                </div>
-                {Database.map((data) => (
-                  <LanguageBar
-                    key={data.name}
-                    name={data.name}
-                    level={data.level}
-                  />
-                ))}
-              </div>
-              <div className="px-4 md:px-10">
-                <div className="flex items-center">
-                    <IoIosArrowForward className="mt-2"/>
-                 <h2 className=" mb-2 text-lg italic font-medium  text-gray-400 mt-4 ">
-                  Libraries & APIs
-                  </h2>
-
-
-                </div>
-                {Libraries.map((librari) => (
-                  <LanguageBar
-                    key={librari.name}
-                    name={librari.name}
-                    level={librari.level}
-                  />
-                ))}
-              </div>
-              <div className="px-4 md:px-10">
-                <div className="flex items-center">
-                    <IoIosArrowForward className="mt-2"/>
-                <h2  className=" mb-2 text-lg italic font-medium  text-gray-400 mt-4 ">
-                  Storage
-                  </h2>
-
-
-                </div>
-                {Storage.map((lang) => (
-                  <LanguageBar
-                    key={lang.name}
-                    name={lang.name}
-                    level={lang.level}
-                  />
-                ))}
-              </div>
-              <div className="px-4 md:px-10">
-                <div className="flex items-center">
-                    <IoIosArrowForward className="mt-2"/>
-                <h2 className=" mb-2 text-lg italic font-medium  text-gray-400 mt-4 "> 
-                  Tools
-                  </h2>
-                </div>
-                {Tools.map((tool) => (
-                  <LanguageBar
-                    key={tool.name}
-                    name={tool.name}
-                    level={tool.level}
-                  />
-                ))}
-              </div>
+              
+            {skillSections.map((section) => (
+  <SkillSection
+    key={section.title}
+    title={section.title}
+    skills={section.skills}
+  />
+))}
             </div>
           </div>
         </div>

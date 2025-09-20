@@ -31,13 +31,13 @@ import sportsgear from "../assets/sportsgear.png";
   
     },
     {
-      title: "BookVerse - Backend",
+      title: "Library-Management-System",
       
       stack: ["MongoDB", "Nodejs", "Expressjs", "Mongoose", "TypeScript"],
       demo: "https://library-management-api-ivory.vercel.app/api/books/",
       code: "https://github.com/mdismailahammedroman/Library-Managements",
       image: librarymanagement,
-   type: "backend"
+   type: "Backend"
     },
     {
       title: "Sports Equipment Marketplace",
@@ -70,6 +70,6 @@ import sportsgear from "../assets/sportsgear.png";
   
   export default projects;
 
-export const ProjectType = "frontend" | "backend" | "fullstack";
+export const ProjectType = "frontend" | "Backend" | "fullstack";
 
   

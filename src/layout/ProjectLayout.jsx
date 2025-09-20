@@ -47,7 +47,9 @@ export default function ProjectLayout() {
           Back-End Development
         </NavLink>
       </nav>
-      <Outlet />
+     <div className='mx-auto max-w-6xl'>
+     <Outlet />
+     </div>
           
         </section>
       </section>

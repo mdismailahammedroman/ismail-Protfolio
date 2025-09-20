@@ -5,26 +5,29 @@ import SocialLinks from "./SocialLinks";
 
 export const Sidebar = ({ open = false }) => {
   return (
-    <aside
-    className={`sidebar w-72 bg-white text-gray-900 flex flex-col items-center py-8 shadow-lg fixed left-0 top-0 h-full z-20 transition-transform duration-300 md:translate-x-0 ${
-      open ? "translate-x-0" : "-translate-x-full"
-    } md:block`}
-  >
-  
+<aside
+  className={`sidebar w-72 bg-white text-gray-900 flex flex-col justify-between py-8 shadow-lg fixed left-0 top-0 h-full z-20 transition-transform duration-300 md:translate-x-0 ${
+    open ? "translate-x-0" : "-translate-x-full"
+  } md:block`}
+>
+  {/* Top section */}
+  <div className="flex flex-col items-center">
     <div className="flex flex-col items-center gap-2 justify-center mx-auto">
-      {" "}
       <div className="mt-10 border-2 border-gray-500">
-        {" "}
         <img
           src={ismail}
           alt="Profile"
           className="h-28 w-28 rounded-full scale-150"
-        />{" "}
-      </div>{" "}
-      <h1 className="text-xl font-bold mt-10 text-gray-700">Md. Ismail Ahammed</h1>{" "}
-      <p className="text-sm text-gray-500 mb-6">Full Stack Web Developer</p>{" "}
+        />
+      </div>
+      <h1 className="text-xl font-bold mt-10 text-gray-700">
+        Md. Ismail Ahammed
+      </h1>
+      <p className="text-sm text-gray-500 mb-6">Full Stack Web Developer</p>
     </div>
-    <nav className="w-full">
+
+    {/* Navigation */}
+    <nav className="w-full mt-6">
       <ul className="space-y-2 text-center">
         <Link
           to="/"
@@ -34,7 +37,7 @@ export const Sidebar = ({ open = false }) => {
         </Link>
         <Link
           to="/about"
-          className=" font-medium text-gray-800 nav-link block py-2 border-b-2 border-t-2 border-gray-200 border-l-6 border-r-6 hover:border-r-yellow-400 hover:border-l-yellow-400 transition"
+          className="font-medium text-gray-800 nav-link block py-2 border-b-2 border-t-2 border-gray-200 border-l-6 border-r-6 hover:border-r-yellow-400 hover:border-l-yellow-400 transition"
         >
           About me
         </Link>
@@ -58,10 +61,13 @@ export const Sidebar = ({ open = false }) => {
         </Link>
       </ul>
     </nav>
+  </div>
 
-    <div className="mt-20 flex space-x-4 text-gray-500 items-center justify-center ">
-     <SocialLinks/>
-    </div>
-  </aside>
+  {/* Bottom Social Links */}
+  <div className=" text-gray-500 mt-50 ">
+    <SocialLinks />
+  </div>
+</aside>
+
   )
 }

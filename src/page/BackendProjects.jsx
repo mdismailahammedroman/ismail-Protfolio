@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { zoomInUp}  from "../utils/animation";
 
 const BackendProjects = () => {
-  const backendProjects = projects.filter((p) => p.type === "backend");
+  const backendProjects = projects.filter((p) => p.type === "Backend");
 
   return (
     <section className="relative px-6 py-12">
