@@ -16,7 +16,7 @@ export const Sidebar = ({ open = false }) => {
       <div className="mt-10 border-2 border-gray-500">
         <img
           src={ismail}
-          alt="Profile"
+          alt="Md. Ismail Ahammed Roman - Full Stack Developer"
           className="h-28 w-28 rounded-full scale-150"
         />
       </div>
