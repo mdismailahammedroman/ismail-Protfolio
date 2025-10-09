@@ -5,6 +5,7 @@ import { TypewriterRoles } from "../component/TypewriterRoles";
 import { services } from "../data/services";
 import { fadeUp } from "../utils/animation";
 import { Helmet } from "react-helmet";
+import { fontend } from "../data/skil-backfont";
 
 
 export const About = () => {
@@ -155,26 +156,15 @@ export const About = () => {
               Frontend Skills & Deliverables
             </h2>
             <div className="text-gray-700 space-y-1 sm:space-y-1">
-              {[
-                [
-                  "Node.js",
-                  "Express.js",
-                  "MongoDB",
-                  "TypeScript",
-                  "JavaScript",
-                ],
-                [
-                  "RESTful API development",
-                  "API design",
-                  "Database management",
-                ],
-                ["Version control", "PostgreSQL", "Mongoose", "Authentication"],
-                ["JWT", "OAuth", "Firebase Auth", "Role-based access control"],
-                ["Server deployment", "Vercel", "CI/CD", "Session", "Testing"],
-                ["Postman", "Error handling", "zod", "Environment variables"],
-                ["CRUD functionality", ".env", "dotenv", "Config management"],
-                [],
-              ].map((group, groupIndex) => (
+              { [
+        ["React.js", "Next.js", "HTML", "TypeScript", "Tailwind CSS"],
+        ["CSS","Shadcn UI", "DaisyUI", "SCSS/SASS", "UI/UX",],
+        ["Responsive Design","Mobile First","Figma to Code","Dark Mode",  ],
+        [ "Theme Toggle", "React Router", "Single Page Applications (SPA)",],
+        ["State Management", "Redux", "React Context API","Form Handling", ],
+        ["React Hook Form", "Validation","Framer Motion", "AOS", "Axios"],
+        ["API Integration", "Fetch", "RTK Query","Lazy Loading"],
+      ].map((group, groupIndex) => (
                 <div key={groupIndex} className="flex flex-wrap text-justify">
                   {group.map((skill, i) => (
                     <motion.span

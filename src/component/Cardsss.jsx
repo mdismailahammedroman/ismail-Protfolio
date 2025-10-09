@@ -1,11 +1,23 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useRef } from 'react';
-import { FaCode, FaExternalLinkAlt } from 'react-icons/fa';
-import { motion } from 'framer-motion';
+import { FaCode, FaExternalLinkAlt, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { motion, AnimatePresence } from 'framer-motion';
 
-export const Cardsss = ({ title, stack, demo, code, image, type, category }) => {
+export const Cardsss = ({ title, stack, demo, code, images = [], type, category }) => {
   const [direction, setDirection] = useState('center');
   const cardRef = useRef(null);
+  const [isHovered, setIsHovered] = useState(false);
+
+  // Carousel state
+  const [currentImage, setCurrentImage] = useState(0);
+
+  const handlePrev = () => {
+    setCurrentImage((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+  };
+
+  const handleNext = () => {
+    setCurrentImage((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+  };
 
   const getDirection = (e) => {
     const bounds = cardRef.current.getBoundingClientRect();
@@ -25,8 +37,6 @@ export const Cardsss = ({ title, stack, demo, code, image, type, category }) => 
     if (fromRight) return 'right';
     return 'center';
   };
-
-  const [isHovered, setIsHovered] = useState(false);
 
   const handleMouseEnter = (e) => {
     setDirection(getDirection(e));
@@ -57,14 +67,41 @@ export const Cardsss = ({ title, stack, demo, code, image, type, category }) => 
       ref={cardRef}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100 group relative"
+      className="relative bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100 group"
     >
-      {/* Image */}
-      <img
-        src={image}
-        alt={title}
-        className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
-      />
+      {/* Carousel Container */}
+      <div className="relative w-full h-64 overflow-hidden">
+        <AnimatePresence initial={false}>
+          <motion.img
+            key={images[currentImage]}
+            src={images[currentImage]}
+            alt={title}
+            className="w-full h-64 object-cover absolute top-0 left-0"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+          />
+        </AnimatePresence>
+
+        {/* Prev/Next Buttons */}
+        {images.length > 1 && (
+          <>
+            <button
+              onClick={handlePrev}
+              className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/40 text-white p-2 rounded-full hover:bg-black/60"
+            >
+              <FaChevronLeft />
+            </button>
+            <button
+              onClick={handleNext}
+              className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/40 text-white p-2 rounded-full hover:bg-black/60"
+            >
+              <FaChevronRight />
+            </button>
+          </>
+        )}
+      </div>
 
       {/* Directional Overlay */}
       {isHovered && (
