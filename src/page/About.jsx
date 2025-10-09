@@ -61,45 +61,43 @@ export const About = () => {
           >
           <TypewriterRoles />
         </motion.div>
-        <div className=" sm:mx-4 md:mx-8 items-start mt-10  text-justify ">
-          <p className="mt-4 tracking-wide  text-gray-500">
-            I hold a Bachelor's degree in{" "}
-            <strong className="text-gray-700 tracking-tighter ">
-              Computer Science & Engineering (BSc in CSE)
-            </strong>
-            , and I specialize in modern web development using the{" "}
-            <strong className="text-gray-700 tracking-tighter ">
-              MERN stack
-            </strong>{" "}
-            <strong className="text-gray-700 tracking-tighter ">
-              {" "}
-              (MongoDB, Express.js, React.js, and Node.js).
-            </strong>{" "}
-          </p>
+        <div className="sm:mx-4 md:mx-8 items-start mt-10 text-justify">
+  <p className=" tracking-wide text-gray-700">
+    I'm a full-stack web developer with a{" "}
+    <strong className="text-gray-600 tracking-tighter">
+      Bachelor's degree in Computer Science & Engineering
+    </strong>
+    , and a strong focus on building modern, scalable, and user-friendly web applications. My core tech stack is the{" "}
+    <strong className="text-gray-600 tracking-tighter">MERN stack</strong>{" "}
+    <strong className="text-gray-600 tracking-tighter">
+      (MongoDB, Express.js, React.js, and Node.js)
+    </strong>
+    , and I love working with{" "}
+    <strong className="text-gray-600 tracking-tighter">TypeScript</strong>
+    ,{" "}
+    <strong className="text-gray-600 tracking-tighter">Tailwind CSS</strong>
+    , and tools like{" "}
+    <strong className="text-gray-600 tracking-tighter">Next.js</strong>
+    ,{" "}
+    <strong className="text-gray-600 tracking-tighter">Firebase</strong>, and{" "}
+    <strong className="text-gray-600 tracking-tighter">PostgreSQL</strong>.
+  </p>
 
-          <p className="mt-4 tracking-tight font-medium text-gray-500">
-            I'm proficient in technologies like{" "}
-            <strong className="text-gray-700 tracking-tighter ">Node.js</strong>
-            ,{" "}
-            <strong className="text-gray-700 tracking-tighter ">
-              React.js
-            </strong>
-            , and{" "}
-            <strong className="text-gray-700 tracking-tighter ">
-              TypeScript
-            </strong>
-            , with a strong focus on building scalable, efficient, and
-            user-friendly web applications. Whether it's developing robust
-            backend APIs or crafting intuitive frontend interfaces, I strive to
-            deliver high-quality solutions tailored to real-world needs.
-          </p>
+  <p className="mt-4 tracking-wide text-gray-700">
+    On the frontend, I create responsive, accessible, and visually clean interfaces that work seamlessly across all devices. On the backend, I build secure and efficient APIs, manage databases, and implement authentication systems using{" "}
+    <strong className="text-gray-600 tracking-tighter">JWT</strong>,{" "}
+    <strong className="text-gray-600 tracking-tighter">OAuth</strong>, and{" "}
+    <strong className="text-gray-600 tracking-tighter">Firebase Auth</strong>. I follow best practices with{" "}
+    <strong className="text-gray-600 tracking-tighter">version control</strong>,{" "}
+    <strong className="text-gray-600 tracking-tighter">CI/CD</strong>, and{" "}
+    <strong className="text-gray-600 tracking-tighter">error handling</strong> to ensure quality and maintainability.
+  </p>
 
-          <p className="mt-4 tracking-tight font-medium text-gray-500">
-            I'm a lifelong learner who thrives in fast-paced environments,
-            values clean code, and enjoys collaborating with other developers to
-            bring ideas to life.
-          </p>
-        </div>
+  <p className="mt-4 tracking-wide text-gray-700">
+    I enjoy turning ideas into real, working products — whether it's a simple interface or a full-stack application. I'm a lifelong learner who’s always exploring, experimenting, and staying up to date with the latest in web development.
+  </p>
+</div>
+
         <motion.div
           className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-10 mx-0 sm:mx-4 md:mx-8 items-start mt-10"
           initial={{ opacity: 0, y: -30 }} // Starts 30px above
@@ -186,7 +184,7 @@ export const About = () => {
 
         {/* Services Section */}
         <motion.div
-          className="mt-12 sm:mt-16 mx-4 sm:mx-6"
+          className="mt-12 sm:mt-16 mx-4 sm:mx-6 lg:w-full"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
@@ -222,7 +220,7 @@ export const About = () => {
           Fun Facts
         </h3>
         <motion.div
-          className="mt-4 mx-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"
+          className=" lg:w-full mt-4 mx-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}

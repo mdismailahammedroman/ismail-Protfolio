@@ -64,7 +64,7 @@ export const Sidebar = ({ open = false }) => {
   </div>
 
   {/* Bottom Social Links */}
-  <div className=" text-gray-500 mt-50 ">
+  <div className=" text-gray-500  ">
     <SocialLinks />
   </div>
 </aside>
