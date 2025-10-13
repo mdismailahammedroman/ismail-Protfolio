@@ -4,7 +4,7 @@ import React from "react";
 import { TypewriterRoles } from "../component/TypewriterRoles";
 import { services } from "../data/services";
 import { fadeUp } from "../utils/animation";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import { fontend } from "../data/skil-backfont";
 
 
@@ -53,7 +53,7 @@ export const About = () => {
         </main>
 
         <motion.div
-          className="text-gray-700 text-base sm:text-lg leading-relaxed mt-4 mx-8 tracking-tight font-bold"
+          className="text-gray-700 text-base sm:text-lg leading-relaxed mt-4 lg:mx-8 tracking-tight font-bold"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -160,7 +160,7 @@ export const About = () => {
         ["Responsive Design","Mobile First","Figma to Code","Dark Mode",  ],
         [ "Theme Toggle", "React Router", "Single Page Applications (SPA)",],
         ["State Management", "Redux", "React Context API","Form Handling", ],
-        ["React Hook Form", "Validation","Framer Motion", "AOS", "Axios"],
+        ["React Hook Form", "Validation","Framer Motion", "Axios"],
         ["API Integration", "Fetch", "RTK Query","Lazy Loading"],
       ].map((group, groupIndex) => (
                 <div key={groupIndex} className="flex flex-wrap text-justify">

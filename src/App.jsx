@@ -1,11 +1,12 @@
 import { MainLayout } from "./layout/MainLayout"
-
-
+import { HelmetProvider } from "react-helmet-async"
 
 function App() {
   
   return (
-   <MainLayout></MainLayout>
+    <HelmetProvider>
+      <MainLayout></MainLayout>
+    </HelmetProvider>
   )
 }
 
