@@ -193,7 +193,8 @@ const containerVariants = {
                     <motion.span
                       key={index}
                       variants={letterVariants}
-                      className="inline-block"
+                      whileHover="hover"
+                      className="inline-block cursor-pointer select-none"
                     >
                       {char === " " ? "\u00A0" : char}
                     </motion.span>
@@ -205,7 +206,8 @@ const containerVariants = {
 </div>
 
                 <ul className="space-y-2 text-gray-300 text-sm sm:text-base font-medium">
-                  <li>
+                  <li
+                  >
                     <strong className="text-yellow-400">Address:</strong>{" "}
                     Mirpur, Dhaka, Bangladesh
                   </li>
