@@ -12,12 +12,12 @@ import career from "../assets/iar-career-counselling.png"
       type: "fullstack"
     },
     {
-      title: "UPCOMMING",
+      title: "Iar Wallet Fontend",
       
-      stack: ["Node.js", "Express", "TypeScript", "PostgreSQL"],
-      demo: "https://sportsgear-19a96.web.app/",
-      code: "https://github.com/mdismailahammedroman?tab=repositories",
-      images: [career],
+      stack: ["Node.js", "Express", "TypeScript", "React","Redux","Tailwind css","shadcn ui"],
+      demo: "https://iar-wallet-font-end.vercel.app",
+      code: "https://github.com/mdismailahammedroman/IAR_Wallate_Fontend",
+      images: ["https://res.cloudinary.com/dfn1s2ysa/image/upload/v1761501323/protfolio/75ccf39d-fcd8-4b9a-8d80-3dda63ea85e0.png"],
       type: "fullstack"
     },
     {
