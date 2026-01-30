@@ -67,7 +67,10 @@ export const Resume = () => {
   return (
     <div className="md:ml-64 flex-1 ">
       <section className="min-h-screen px-4 md:px-10 py-8 bg-white text-gray-800">
+
+        
         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-10">
+          
           <div
             className="text-white font-bold text-2xl px-6 h-20 p-3 inline-block lg:-ml-14 w-40"
             style={{
@@ -82,6 +85,37 @@ export const Resume = () => {
             4+ Years of Experience
           </p>
         </div>
+        <div className="container mx-auto flex flex-col items-start lg:flex-row my-3">
+  <div className="flex flex-col w-full lg:sticky md:top-36 lg:w-1/3 mt-2 md:mt-12 px-8">
+    <p className="text-xl tracking-tighter font-bold md:text-2xl mb-2 text-gray-500">
+      Experience
+    </p>
+    <p className="text-sm md:text-base font-medium text-gray-400 mb-4 italic">
+      Professional experience building scalable backend systems.
+    </p>
+  </div>
+
+  <div className="lg:w-2/3">
+    <div className="relative p-10">
+      <div
+        className="absolute h-full border-2"
+        style={{ right: "50%", borderColor: "#FFC100" }}
+      />
+      <div
+        className="absolute h-full border-2"
+        style={{ left: "50%", borderColor: "#FFC100" }}
+      />
+
+      <TimelineItem
+        direction="left"
+        year="2023 - Present"
+        title="Backend Developer"
+        subtitle="Betopia"
+        location="Dhaka, Bangladesh"
+      />
+    </div>
+  </div>
+</div>
 
         <div className="container mx-auto flex flex-col items-start lg:flex-row my-3 ">
           {" "}
