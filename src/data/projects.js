@@ -1,24 +1,23 @@
-import career from "../assets/iar-career-counselling.png"
 
 
  const projects = [
     {
-      title: "UPCOMMING",
+      title: "Iar Wallet Backend",
       
-      stack: ["React", "Redux", "Node.js", "Express", "PostgreSQL"],
-      demo: "https://sportsgear-19a96.web.app/",
-      code: "https://github.com/mdismailahammedroman?tab=repositories",
-      images: [career],
-      type: "fullstack"
+      stack: ["React", "Redux","Tailwind css","shadcn ui" ],
+      demo: "https://iar-wallet-font-end.vercel.app",
+      code: "https://github.com/mdismailahammedroman/IAR_Wallate_Fontend",
+      images: ["https://res.cloudinary.com/dfn1s2ysa/image/upload/v1761501323/protfolio/75ccf39d-fcd8-4b9a-8d80-3dda63ea85e0.png"],
+         type: "frontend"
     },
     {
       title: "Iar Wallet Fontend",
       
-      stack: ["Node.js", "Express", "TypeScript", "React","Redux","Tailwind css","shadcn ui"],
-      demo: "https://iar-wallet-font-end.vercel.app",
-      code: "https://github.com/mdismailahammedroman/IAR_Wallate_Fontend",
-      images: ["https://res.cloudinary.com/dfn1s2ysa/image/upload/v1761501323/protfolio/75ccf39d-fcd8-4b9a-8d80-3dda63ea85e0.png"],
-      type: "fullstack"
+      stack: ["Node.js", "Express", "TypeScript", "Mongodb","Mongoose"],
+      demo: "https://iar-wallet-api.vercel.app",
+      code: "https://github.com/mdismailahammedroman/IAR-Wallate-Api",
+      images: ["https://res.cloudinary.com/dfn1s2ysa/image/upload/v1761501355/protfolio/0bac35f0-3817-43e8-9722-60c4cdbd5747.png"],
+         type: "Backend"
     },
     {
       title: "BookVerse - Fontend",

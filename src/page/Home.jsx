@@ -4,39 +4,38 @@ import ismail1 from "../assets/ismsmile.jpeg";
 import { TypewriterRoles } from "../component/TypewriterRoles";
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
+import { Link } from "react-router";
 
 const text = "Md. Ismail Ahammed Roman";
 
-
 export const Home = () => {
-  
-const containerVariants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.12,
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.12,
+      },
     },
-  },
   };
-  
+
   const letterVariants = {
-  hidden: { y: -50, opacity: 0 },
-  visible: {
-    y: [-50, 0, -10, 0, 0, 0, 0, 0],
-    x: [0, 0, 0, 0, -2, 2, -2, 2, 0],
-    opacity: 1,
-    transition: { duration: 1, ease: "easeInOut" },
-  },
-  hover: {
-    y: [0, -15, 0],
-    scale: [1, 1.2, 1],
-    color: ["#ffffff", "#facc15", "#ffffff"],
-    transition: { 
-      duration: 0.6, 
-      ease: "easeInOut",
-      times: [0, 0.5, 1]
+    hidden: { y: -50, opacity: 0 },
+    visible: {
+      y: [-50, 0, -10, 0, 0, 0, 0, 0],
+      x: [0, 0, 0, 0, -2, 2, -2, 2, 0],
+      opacity: 1,
+      transition: { duration: 1, ease: "easeInOut" },
     },
-  },
+    hover: {
+      y: [0, -15, 0],
+      scale: [1, 1.2, 1],
+      color: ["#ffffff", "#facc15", "#ffffff"],
+      transition: {
+        duration: 0.6,
+        ease: "easeInOut",
+        times: [0, 0.5, 1],
+      },
+    },
   };
   return (
     <>
@@ -202,12 +201,11 @@ const containerVariants = {
                 </motion.h1>
 
                 <div className="text-lg sm:text-xl mb-4 tracking-tight">
-  <TypewriterRoles />
-</div>
+                  <TypewriterRoles />
+                </div>
 
                 <ul className="space-y-2 text-gray-300 text-sm sm:text-base font-medium">
-                  <li
-                  >
+                  <li>
                     <strong className="text-yellow-400">Address:</strong>{" "}
                     Mirpur, Dhaka, Bangladesh
                   </li>
@@ -220,6 +218,15 @@ const containerVariants = {
                     Available
                   </li>
                 </ul>
+                <div className="relative z-30 mt-20">
+                  <a
+                    href="https://drive.google.com/file/d/1g6NEQQZiuLdhWZJl7shKM3vG3UlkOpC_/view?usp=drive_link" // points to public folder
+                    download="Md_Ismail_Roman_CV.pdf" // filename for downloaded file
+                    className="-tracking-wider inline-block px-6 py-3 bg-yellow-500 text-white font-semibold  hover:bg-yellow-500 transition-colors duration-300"
+                  >
+                    Download CV
+                  </a>
+                </div>
               </div>
             </div>
           </div>

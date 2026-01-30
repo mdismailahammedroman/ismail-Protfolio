@@ -19,7 +19,7 @@ html, body, #root {
 }
 
 .background {
-  background-image: url('../src/assets/ismailbox.png');
+  background-image: url('../src/assets/desk.jpg');
   background-size: cover;
   background-position: center;
   height: 100vh;
