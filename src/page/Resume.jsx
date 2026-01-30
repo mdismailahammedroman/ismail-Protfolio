@@ -108,7 +108,7 @@ export const Resume = () => {
 
       <TimelineItem
         direction="left"
-        year="2023 - Present"
+        year="Dec-2025 - Present"
         title="Backend Developer"
         subtitle="Betopia"
         location="Dhaka, Bangladesh"
