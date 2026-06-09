@@ -4,7 +4,6 @@ import { motion, useScroll, useTransform, type Variants } from 'framer-motion';
 import { 
   Cpu, Zap, Layers, Globe, GraduationCap, Briefcase, 
   MapPin, Calendar, Award, Code, Rocket, Heart, Shield, 
-  University
 } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 

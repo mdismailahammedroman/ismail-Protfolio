@@ -6,7 +6,7 @@ import { About } from './components/About';
 import { Skills } from './components/Skills';
 import { Projects } from './components/Projects';
 import { Contact } from './components/Contact';
-import { Terminal, Settings } from 'lucide-react';
+import { Terminal } from 'lucide-react';
 
 interface ProjectLinks {
   liveUrl: string;
@@ -14,18 +14,18 @@ interface ProjectLinks {
 }
 
 const DEFAULT_LINKS: Record<string, ProjectLinks> = {
-  epicnz: { liveUrl: '', githubUrl: '' },
-  benchmark: { liveUrl: '', githubUrl: '' },
-  trucking: { liveUrl: '', githubUrl: '' },
-  wallet: { liveUrl: 'https://iar-wallet-font-end.vercel.app/', githubUrl: '' },
-  bookverse: { liveUrl: '', githubUrl: '' },
-  healthsync: { liveUrl: '', githubUrl: '' },
-  yeppads: { liveUrl: 'https://yeppads.com/', githubUrl: '' },
+  epicnz: { liveUrl: 'https://epicnz-web.vercel.app/', githubUrl: 'https://github.com/Roman001-ai/epicnz-web' },
+  benchmark: { liveUrl: 'https://benchmark-font-end.vercel.app/', githubUrl: 'https://github.com/Roman001-ai/benchMark-fontend' },
+  trucking: { liveUrl: 'https://trucking-fontend.vercel.app/', githubUrl: 'https://github.com/Roman001-ai/trucking-fontend' },
+  wallet: { liveUrl: 'https://iar-wallet-font-end.vercel.app/', githubUrl: 'https://github.com/Roman001-ai/iar-wallet-font-end' },
+  bookverse: { liveUrl: 'https://library-management-fontend.vercel.app/', githubUrl: 'https://github.com/Roman001-ai/library-management-fontend' },
+  healthsync: { liveUrl: 'https://sportsgear-19a96.web.app/', githubUrl: 'https://github.com/Roman001-ai/sportsgear-19a96.web.app' },
+  yeppads: { liveUrl: 'https://yeppads.com/', githubUrl: 'https://github.com/Roman001-ai/yeppads' },  
 };
 
 function App() {
   const [projectLinks, setProjectLinks] = useState<Record<string, ProjectLinks>>(DEFAULT_LINKS);
-  const [devPanelOpen, setDevPanelOpen] = useState(false);
+  const [, setDevPanelOpen] = useState(false);
 
   // Load custom links on mount
   useEffect(() => {
@@ -44,14 +44,7 @@ function App() {
     }
   }, []);
 
-  const handleSaveLinks = (updatedLinks: Record<string, ProjectLinks>) => {
-    setProjectLinks(updatedLinks);
-    try {
-      localStorage.setItem('roman_portfolio_links', JSON.stringify(updatedLinks));
-    } catch (err) {
-      console.error('Failed to write links to localStorage', err);
-    }
-  };
+
 
   return (
     <div className="relative min-h-screen text-white bg-dark-bg selection:bg-purple-500/30 selection:text-purple-200">
