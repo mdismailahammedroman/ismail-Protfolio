@@ -110,25 +110,25 @@ export const Projects: React.FC<ProjectsProps> = ({
       liveUrl: 'https://library-management-fontend.vercel.app/',
       githubUrl: 'https://github.com/mdismailahammedroman/Library-Management-System_fontend',
     },
-    healthsync: {
+    sportsgear: {
       liveUrl: 'https://sportsgear-19a96.web.app/',
       githubUrl: 'https://github.com/mdismailahammedroman/SportsGear-clientSide',
     },
     epicnz: {
-      liveUrl: '',
-      githubUrl: '',
+      liveUrl: 'https://epicnz-web.vercel.app/',
+      githubUrl: 'https://github.com/Roman001-ai/epicnz-web',
     },
     benchmark: {
-      liveUrl: '',
-      githubUrl: '',
+      liveUrl: 'https://benchmark-font-end.vercel.app/',
+      githubUrl: 'https://github.com/Roman001-ai/benchMark-fontend',
     },
     trucking: {
-      liveUrl: '',
-      githubUrl: '',
+      liveUrl: 'https://trucking-fontend.vercel.app/',
+      githubUrl: 'https://github.com/Roman001-ai/trucking-fontend',
     },
     yeppads: {
-      liveUrl: '',
-      githubUrl: '',
+      liveUrl: 'https://yeppads.com/',
+      githubUrl: 'https://github.com/Roman001-ai/yeppads',
     },
   };
 
@@ -137,7 +137,7 @@ export const Projects: React.FC<ProjectsProps> = ({
     const backendRepos: Record<string, string> = {
       wallet: 'https://github.com/mdismailahammedroman/IAR-Wallate-Api',
       bookverse: 'https://github.com/mdismailahammedroman/Library-Managements',
-      healthsync: 'https://github.com/mdismailahammedroman/SportsGear-ServertSide',
+      sportsgear: 'https://github.com/mdismailahammedroman/SportsGear-ServertSide',
     };
     return backendRepos[projectId] || '';
   };
